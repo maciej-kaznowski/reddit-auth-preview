@@ -1,5 +1,5 @@
 # reddit-auth-preview
-This repository contains a few modules for authentication/authorisation with the reddit API from one of my apps - [React for Reddit](https://play.google.com/store/apps/details?id=com.innercirclesoftware.reddit&hl=en&gl=US). It won't compile as not all dependencies are provided. **It is meant for demonstration purposes only.**
+This repository contains a few modules for authentication/authorisation with the reddit API from one of my apps - [React for Reddit](https://play.google.com/store/apps/details?id=com.innercirclesoftware.reddit&hl=en&gl=US). It handles fetching, refreshing, and persisting refresh and access tokens when a user authorizes the app to access their account (via oauth2) or when an access token expires. The authorization response (refresh & access tokens, scopes, expires timestamp) are persisted into a SQLite database for an account. It won't compile as not all dependencies are provided. **It is meant for demonstration purposes only.**
 
 
 ## Some key points:
