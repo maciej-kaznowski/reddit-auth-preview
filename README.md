@@ -18,7 +18,7 @@ This repository contains a few modules for authentication/authorisation with the
 
 
 ## Interesting classes:
-- https://github.com/maciej-kaznowski/reddit-auth-preview/reddit-auth-api/src/main/java/com/innercirclesoftware/reddit_auth_api/RedditAuthenticator.kt RedditAuthenticator - any part of the app which authenticates with reddit does so through this interface
-- https://github.com/maciej-kaznowski/reddit-auth-preview/reddit-auth/src/main/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImpl.kt RedditAuthenticatorImpl - the implementation of the above class
-- https://github.com/maciej-kaznowski/reddit-auth-preview/reddit-auth/src/test/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImplTest.kt unit tests for the above
-- https://github.com/maciej-kaznowski/reddit-auth-preview/reddit-auth-preview/blob/main/reddit-auth/src/androidTest/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImplIntTest.kt - integration test for the entire authentication flow
+- https://github.com/maciej-kaznowski/reddit-auth-preview/blob/main/reddit-auth-api/src/main/java/com/innercirclesoftware/reddit_auth_api/RedditAuthenticator.kt RedditAuthenticator - any part of the app which authenticates with reddit does so through this interface
+- https://github.com/maciej-kaznowski/reddit-auth-preview/blob/main/reddit-auth/src/main/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImpl.kt RedditAuthenticatorImpl - the implementation of the above class
+- https://github.com/maciej-kaznowski/reddit-auth-preview/blob/main/reddit-auth/src/test/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImplTest.kt unit tests for the above
+- https://github.com/maciej-kaznowski/reddit-auth-preview/blob/main/reddit-auth/src/androidTest/java/com/innercirclesoftware/reddit_auth/RedditAuthenticatorImplIntTest.kt - integration test for the entire authentication flow
