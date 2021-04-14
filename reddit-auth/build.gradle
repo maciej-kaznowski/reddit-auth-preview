@@ -1,0 +1,95 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+
+def config = rootProject.extensions.getByName("ext")
+
+
+android {
+    compileSdkVersion config["compileSdkVersion"]
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        minSdkVersion config["minSdkVersion"]
+        targetSdkVersion config["targetSdkVersion"]
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        // Flag to enable support for the new language APIs
+        coreLibraryDesugaringEnabled true
+
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    api project(':reddit-auth-api')
+    implementation project(':reddit-api')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    //rxjava
+    implementation config.commonDependencies.rxJava
+    implementation config.commonDependencies.rxKotlin
+
+    //retrofit
+    implementation config.retrofitDependencies.retrofit
+    implementation config.retrofitDependencies.retrofit_rxjava
+
+    //room
+    implementation config.roomDependencies.library
+    implementation config.roomDependencies.rxjava
+    kapt config.roomDependencies.compiler
+    testImplementation config.roomDependencies.test
+
+    //dagger
+    kapt config.daggerDependencies.compiler
+    kaptTest config.daggerDependencies.compiler
+    implementation config.daggerDependencies.library
+    compileOnly config.daggerDependencies.jsr250
+
+    //for java.time
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
+
+    testImplementation project(":shared-test")
+    testImplementation project(":reddit-auth-test")
+    androidTestImplementation project(":shared-test")
+
+    testImplementation config.commonDependencies.mockito
+    testImplementation config.testDependencies.mockitoKotlin
+    androidTestImplementation config.commonDependencies.mockito
+    androidTestImplementation config.testDependencies.mockitoKotlin
+
+    testImplementation config.testDependencies.kluent
+    androidTestImplementation config.testDependencies.kluentAndroid
+
+    testImplementation config.innercirclesoftware.randoms
+    androidTestImplementation config.innercirclesoftware.randoms
+
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    androidTestImplementation config.okhttpDependencies.mockServer
+    androidTestImplementation config.retrofitDependencies.retrofit
+    androidTestImplementation config.retrofitDependencies.retrofit_rxjava
+    androidTestImplementation config.retrofitDependencies.retrofit_moshi_converter
+    androidTestImplementation project(':mock-utils')
+}

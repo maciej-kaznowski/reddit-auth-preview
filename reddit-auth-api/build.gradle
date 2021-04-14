@@ -1,0 +1,14 @@
+plugins {
+    id 'kotlin'
+}
+
+def config = rootProject.extensions.getByName("ext")
+
+dependencies {
+    implementation config.okhttpDependencies.library
+    implementation config.commonDependencies.rxJava
+    implementation config.commonDependencies.rxKotlin
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"
