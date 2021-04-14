@@ -4,6 +4,7 @@ This repository contains a few modules for authentication/authorisation with the
 
 Some key points:
 
+- This is not currently meant to be used in a backend - they are being used in an Android app
 - All modules are written in kotlin (in these cases compiles down to JVM bytecode)
 - It is split into 3 different modules:
   - API: any module can use this
